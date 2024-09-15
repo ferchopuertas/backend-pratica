@@ -1,0 +1,20 @@
+# Ignorar archivos de entorno
+.env
+
+# Ignorar directorios y archivos node_modules
+node_modules/
+
+# Ignorar archivos de log
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignorar archivos de entorno de producción o desarrollo
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignorar archivos de configuración del editor (por ejemplo, VSCode)
+.vscode/
+.idea/
