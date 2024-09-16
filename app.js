@@ -9,7 +9,7 @@ const routerAsisNec = require('./routes/routeAsisNec');
 const routerLogin = require('./routes/routeLogin');
 const authenticateToken = require('./middleware/auth'); // Importa el middleware
 const app = express();
-const MYSQLPORT = process.env.MYSQLPORT || 3000
+const MYSQLPORT = process.env.MYSQLPORT || 3306
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
