@@ -1,13 +1,5 @@
 const mysql = require('mysql2')
 require('dotenv').config();
-const { parse } = require('url');
-
-// Si tienes la URL completa en el archivo .env
-const dbUrl = process.env.MYSQL_URL || '';
-
-const { hostname: host, pathname, auth } = parse(dbUrl);
-const [user, password] = auth.split(':');
-const database = pathname.replace('/', ''); // Elimina la barra inicial del pathname
 
 const db = mysql.createPool({
     connectionLimit: 100,
@@ -15,7 +7,8 @@ const db = mysql.createPool({
     user: process.env.MYSQLUSER,
     password: process.env.MYSQLPASSWORD,
     database: process.env.MYSQLDATABASE,
-    connectTimeout: 90000
+    port: process.env.MYSQLPORT,
+    connectTimeout: 20000
 
 })
 
