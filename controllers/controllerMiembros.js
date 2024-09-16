@@ -80,7 +80,7 @@ Miembros.Cobrar = (req, res) => {
     const miembroId = req.params.id;
 
     // Primero verificamos el stock disponible de box
-    const checkStockCommand = 'SELECT Cantidad FROM Stock WHERE Item = "box"';
+    const checkStockCommand = 'SELECT Cantidad FROM stock WHERE Item = "box"';
     db.query(checkStockCommand, (error, stockResults) => {
         if (error) {
             console.error('Error fetching stock:', error);
@@ -120,7 +120,7 @@ Miembros.Cobrar = (req, res) => {
                         return res.status(500).send('Error fetching members');
                     }
 
-                    const command3 = 'SELECT * FROM Stock WHERE Item = "box"';
+                    const command3 = 'SELECT * FROM stock WHERE Item = "box"';
                     db.query(command3, (error, stockResults) => {
                         if (error) {
                             console.error('Error fetching stock:', error);
