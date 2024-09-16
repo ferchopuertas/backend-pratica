@@ -24,8 +24,8 @@ app.use('/api/miembros', authenticateToken, routerMiembros);
 app.use('/api/stock', authenticateToken, routerStock);
 app.use('/api/asisnec', authenticateToken, routerAsisNec);
 
-app.listen(PORT, () => {
-  console.log('Server running on port 3000');
+app.listen(MYSQLPORT, () => {
+  console.log(`Server is runing on port ${MYSQLPORT}`);
 });
 
 
